@@ -1,16 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "N3DAnwzjjPBzGHvbTxw+5P2TRZJ6BFPKFkBqNfWXztL0GcJwJIj1hz1TAqZ2RtmmtIrQ24W151cEKCS/FJLayg==",
+  "dgSpecHash": "pKhrFeGJldtF4f4osBxrawuIPs/OBxFcf5H8zW5eBtmJYB0zKpy5vK4A07YMbR20AF1x/3d6ZIHF82umqhrxDA==",
   "success": true,
   "projectFilePath": "C:\\Users\\user\\source\\repos\\SerialPortDeneme\\SerialPortDeneme\\SerialPortDeneme.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\user\\.nuget\\packages\\runtime.linux-arm.runtime.native.system.io.ports\\6.0.0\\runtime.linux-arm.runtime.native.system.io.ports.6.0.0.nupkg.sha512",
-    "C:\\Users\\user\\.nuget\\packages\\runtime.linux-arm64.runtime.native.system.io.ports\\6.0.0\\runtime.linux-arm64.runtime.native.system.io.ports.6.0.0.nupkg.sha512",
-    "C:\\Users\\user\\.nuget\\packages\\runtime.linux-x64.runtime.native.system.io.ports\\6.0.0\\runtime.linux-x64.runtime.native.system.io.ports.6.0.0.nupkg.sha512",
-    "C:\\Users\\user\\.nuget\\packages\\runtime.native.system.io.ports\\6.0.0\\runtime.native.system.io.ports.6.0.0.nupkg.sha512",
-    "C:\\Users\\user\\.nuget\\packages\\runtime.osx-arm64.runtime.native.system.io.ports\\6.0.0\\runtime.osx-arm64.runtime.native.system.io.ports.6.0.0.nupkg.sha512",
-    "C:\\Users\\user\\.nuget\\packages\\runtime.osx-x64.runtime.native.system.io.ports\\6.0.0\\runtime.osx-x64.runtime.native.system.io.ports.6.0.0.nupkg.sha512",
-    "C:\\Users\\user\\.nuget\\packages\\system.io.ports\\6.0.0\\system.io.ports.6.0.0.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }

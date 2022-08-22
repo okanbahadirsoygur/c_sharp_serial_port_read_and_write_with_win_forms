@@ -3,7 +3,7 @@ using System.IO.Ports;
 namespace SerialPortDeneme
 {
 
-    public partial class Form1 : Form
+    public partial class Form1 :  Form
     {
         public int boundRate;
         public String portName;
@@ -17,8 +17,8 @@ namespace SerialPortDeneme
         {
             InitializeComponent();
         }
-         
-       
+
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -27,14 +27,14 @@ namespace SerialPortDeneme
             {
                 labelTxt.Text += i+"\n";
             }
-          */
+            */
 
             // form elementlerindeki ayarlarýn deðiþkenlere aktarýmý
-     
+
             this.boundRate = Convert.ToInt32(boundRateList.GetItemText(boundRateList.SelectedItem));
             this.portName = portList.GetItemText(portList.SelectedItem);
             this.dataBits = Convert.ToInt32(dataBitText.Text);
-         
+
 
 
 
@@ -43,62 +43,54 @@ namespace SerialPortDeneme
                 if (serial_port_acik_mi == false)
                 {
                     _serialPort = new SerialPort("" + this.portName);
-                  
+
 
                     // serial port ayarlarý
                     //port ayarlarý port açýk iken deðiþtirilemez!
                     this._serialPort.PortName = this.portName;
                     this._serialPort.BaudRate = this.boundRate;
-                    this._serialPort.Parity = Parity.Even;
-                    this._serialPort.StopBits = StopBits.One;
                     this._serialPort.DataBits = this.dataBits;
-                    this._serialPort.Handshake = Handshake.None;
-                    this._serialPort.RtsEnable = true;
-                    this._serialPort.ReadTimeout = 500;
-                    this._serialPort.WriteTimeout = 500;
+
+                    //sabit deðerler
+                    this._serialPort.Parity = Parity.None;
+                    this._serialPort.StopBits = StopBits.One;
                     this._serialPort.DtrEnable = true;
                     this._serialPort.RtsEnable = true;
 
 
+
+
+
+
+
                     _serialPort.DataReceived += new SerialDataReceivedEventHandler(_serialPort_DataReceived);
-                    _serialPort.Open();
-                   
 
-                
-                    baglantiBtn.Text = "Baðlantýyý Kapat";
-                    serialPortTimer.Enabled = true;
-                    serial_port_acik_mi = true;
 
-                    seriPortDataYollaBtn.Enabled = true;
-                    seriPortDataTxt.Enabled = true;
-                    label6.Enabled = true;
+                    kontrolleri_kapat_ac(true);
+                      
+
 
                 }
                 else
                 {
-                    _serialPort.Close();
-                    baglantiBtn.Text = "Baðlan";
-                    serialPortTimer.Enabled = false;
-                    serial_port_acik_mi = false;
+                    kontrolleri_kapat_ac(false);
 
-                    seriPortDataYollaBtn.Enabled = false;
-                    seriPortDataTxt.Enabled = false;
-                    label6.Enabled = false;
                 }
-                 
 
-            }catch(Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
+
             }
-        
+            catch (Exception ex)
+            {
+                kontrolleri_kapat_ac(false);
+            }
+
 
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-             
-    
+
+
             //baþlangýçta default kapalý olsun
             serial_port_acik_mi = false;
 
@@ -112,62 +104,75 @@ namespace SerialPortDeneme
         private void _serialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
 
-    
+
             try
             {
 
                 if (serial_port_acik_mi == true)
                 {
                     SerialPort sp = (SerialPort)sender;
-                    richTextBox1.Text += sp.ReadExisting();
-                }
+               
+                    richTextBox1.Text += sp.ReadLine(); }
 
             }
             catch (Exception ex)
             {
-                richTextBox1.Text += "\n" + ex;
+
+                kontrolleri_kapat_ac(false);
+
+
             }
 
         }
- 
- 
+
 
         private void seriPortDataYollaBtn_Click(object sender, EventArgs e)
         {
-          
-                String data = seriPortDataTxt.ToString();
 
-                _serialPort.WriteLine(data);
+            String data = seriPortDataTxt.Text.ToString();
 
-                seriPortDataTxt.Text = "";
-           
-        }
+            _serialPort.WriteLine(data);
 
-        public void serialPortDataRecivedEvent(object sender, EventArgs e)
-        {
+            seriPortDataTxt.Text = "";
 
         }
 
-        private void serialPortTimer_Tick(object sender, EventArgs e)
+
+        public void kontrolleri_kapat_ac(bool durum)
         {
-            try
+
+            if (durum && !_serialPort.IsOpen)
             {
+                _serialPort.Open();
+                baglantiBtn.Text = "Baðlantýyý Kapat";
 
-                if (serial_port_acik_mi == true)
-                {
+                serial_port_acik_mi = true;
 
-                    richTextBox1.Text += _serialPort.ReadExisting().ToString();
-          
-                }
+                seriPortDataYollaBtn.Enabled = true;
+                seriPortDataTxt.Enabled = true;
 
             }
-            catch (Exception ex)
+            else if (durum == false && _serialPort.IsOpen)
             {
+                _serialPort.Close();
 
-                richTextBox1.Text += "\n" + ex;
-                serialPortTimer.Enabled = false;
+                baglantiBtn.Text = "Baðlan";
+
+                serial_port_acik_mi = false;
+
+                seriPortDataYollaBtn.Enabled = false;
+                seriPortDataTxt.Enabled = false;
+
+
             }
+             
 
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+            richTextBox1.SelectionStart = richTextBox1.Text.Length;
+            richTextBox1.ScrollToCaret();
         }
     }
 }

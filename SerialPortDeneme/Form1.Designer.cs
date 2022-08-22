@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.baglantiBtn = new System.Windows.Forms.Button();
             this.portList = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -38,11 +37,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.serialPortTimer = new System.Windows.Forms.Timer(this.components);
             this.seriPortDataYollaBtn = new System.Windows.Forms.Button();
             this.seriPortDataTxt = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // baglantiBtn
@@ -119,31 +116,28 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(12, 276);
+            this.richTextBox1.Location = new System.Drawing.Point(196, 57);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(159, 251);
+            this.richTextBox1.Size = new System.Drawing.Size(273, 172);
             this.richTextBox1.TabIndex = 8;
             this.richTextBox1.Text = "";
+            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 258);
+            this.label4.Location = new System.Drawing.Point(196, 39);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 15);
             this.label4.TabIndex = 9;
             this.label4.Text = "Resonse:";
             // 
-            // serialPortTimer
-            // 
-            this.serialPortTimer.Tick += new System.EventHandler(this.serialPortTimer_Tick);
-            // 
             // seriPortDataYollaBtn
             // 
             this.seriPortDataYollaBtn.Enabled = false;
-            this.seriPortDataYollaBtn.Location = new System.Drawing.Point(10, 590);
+            this.seriPortDataYollaBtn.Location = new System.Drawing.Point(196, 264);
             this.seriPortDataYollaBtn.Name = "seriPortDataYollaBtn";
-            this.seriPortDataYollaBtn.Size = new System.Drawing.Size(159, 23);
+            this.seriPortDataYollaBtn.Size = new System.Drawing.Size(273, 23);
             this.seriPortDataYollaBtn.TabIndex = 10;
             this.seriPortDataYollaBtn.Text = "Yolla";
             this.seriPortDataYollaBtn.UseVisualStyleBackColor = true;
@@ -152,9 +146,9 @@
             // seriPortDataTxt
             // 
             this.seriPortDataTxt.Enabled = false;
-            this.seriPortDataTxt.Location = new System.Drawing.Point(10, 561);
+            this.seriPortDataTxt.Location = new System.Drawing.Point(196, 235);
             this.seriPortDataTxt.Name = "seriPortDataTxt";
-            this.seriPortDataTxt.Size = new System.Drawing.Size(159, 23);
+            this.seriPortDataTxt.Size = new System.Drawing.Size(273, 23);
             this.seriPortDataTxt.TabIndex = 11;
             // 
             // label5
@@ -162,26 +156,15 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(50, 9);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(81, 15);
+            this.label5.Size = new System.Drawing.Size(103, 15);
             this.label5.TabIndex = 12;
-            this.label5.Text = "Seri Port Dinle";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Enabled = false;
-            this.label6.Location = new System.Drawing.Point(39, 543);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(98, 15);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "Seri Port Data Yaz";
+            this.label5.Text = "Seri Port Dinle/Yaz";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(181, 624);
-            this.Controls.Add(this.label6);
+            this.ClientSize = new System.Drawing.Size(481, 301);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.seriPortDataTxt);
             this.Controls.Add(this.seriPortDataYollaBtn);
@@ -213,10 +196,8 @@
         private Label label3;
         private RichTextBox richTextBox1;
         private Label label4;
-        private System.Windows.Forms.Timer serialPortTimer;
         private Button seriPortDataYollaBtn;
         private TextBox seriPortDataTxt;
         private Label label5;
-        private Label label6;
     }
 }
