@@ -3,7 +3,7 @@ using System.IO.Ports;
 namespace SerialPortDeneme
 {
 
-    public partial class Form1 :  Form
+    public partial class Form1 : Form
     {
         public int boundRate;
         public String portName;
@@ -67,7 +67,7 @@ namespace SerialPortDeneme
 
 
                     kontrolleri_kapat_ac(true);
-                      
+
 
 
                 }
@@ -111,8 +111,9 @@ namespace SerialPortDeneme
                 if (serial_port_acik_mi == true)
                 {
                     SerialPort sp = (SerialPort)sender;
-               
-                    richTextBox1.Text += sp.ReadLine(); }
+
+                    richTextBox1.Text += sp.ReadLine();
+                }
 
             }
             catch (Exception ex)
@@ -140,32 +141,40 @@ namespace SerialPortDeneme
 
         public void kontrolleri_kapat_ac(bool durum)
         {
-
-            if (durum && !_serialPort.IsOpen)
+            try
             {
-                _serialPort.Open();
-                baglantiBtn.Text = "Baðlantýyý Kapat";
 
-                serial_port_acik_mi = true;
+                if (durum && !_serialPort.IsOpen)
+                {
+                    _serialPort.Open();
 
-                seriPortDataYollaBtn.Enabled = true;
-                seriPortDataTxt.Enabled = true;
+                    baglantiBtn.Text = "Baðlantýyý Kapat";
+
+                    serial_port_acik_mi = true;
+
+                    seriPortDataYollaBtn.Enabled = true;
+                    seriPortDataTxt.Enabled = true;
+
+                }
+                else if (durum == false && _serialPort.IsOpen)
+                {
+                    _serialPort.Close();
+
+                    baglantiBtn.Text = "Baðlan";
+
+                    serial_port_acik_mi = false;
+
+                    seriPortDataYollaBtn.Enabled = false;
+                    seriPortDataTxt.Enabled = false;
+
+
+                }
+            }
+            catch
+            {
 
             }
-            else if (durum == false && _serialPort.IsOpen)
-            {
-                _serialPort.Close();
 
-                baglantiBtn.Text = "Baðlan";
-
-                serial_port_acik_mi = false;
-
-                seriPortDataYollaBtn.Enabled = false;
-                seriPortDataTxt.Enabled = false;
-
-
-            }
-             
 
         }
 
