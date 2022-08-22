@@ -1,0 +1,13 @@
+C:\Users\user\source\repos\SerialPortDeneme\SerialPortDeneme\bin\Release\net6.0-windows\publish\SerialPortDeneme.exe
+C:\Users\user\source\repos\SerialPortDeneme\SerialPortDeneme\bin\Release\net6.0-windows\publish\SerialPortDeneme.dll
+C:\Users\user\source\repos\SerialPortDeneme\SerialPortDeneme\bin\Release\net6.0-windows\publish\SerialPortDeneme.deps.json
+C:\Users\user\source\repos\SerialPortDeneme\SerialPortDeneme\bin\Release\net6.0-windows\publish\SerialPortDeneme.runtimeconfig.json
+C:\Users\user\source\repos\SerialPortDeneme\SerialPortDeneme\bin\Release\net6.0-windows\publish\SerialPortDeneme.pdb
+C:\Users\user\source\repos\SerialPortDeneme\SerialPortDeneme\bin\Release\net6.0-windows\publish\System.IO.Ports.dll
+C:\Users\user\source\repos\SerialPortDeneme\SerialPortDeneme\bin\Release\net6.0-windows\publish\runtimes\linux-arm\native\libSystem.IO.Ports.Native.so
+C:\Users\user\source\repos\SerialPortDeneme\SerialPortDeneme\bin\Release\net6.0-windows\publish\runtimes\linux-arm64\native\libSystem.IO.Ports.Native.so
+C:\Users\user\source\repos\SerialPortDeneme\SerialPortDeneme\bin\Release\net6.0-windows\publish\runtimes\linux-x64\native\libSystem.IO.Ports.Native.so
+C:\Users\user\source\repos\SerialPortDeneme\SerialPortDeneme\bin\Release\net6.0-windows\publish\runtimes\osx-arm64\native\libSystem.IO.Ports.Native.dylib
+C:\Users\user\source\repos\SerialPortDeneme\SerialPortDeneme\bin\Release\net6.0-windows\publish\runtimes\osx-x64\native\libSystem.IO.Ports.Native.dylib
+C:\Users\user\source\repos\SerialPortDeneme\SerialPortDeneme\bin\Release\net6.0-windows\publish\runtimes\unix\lib\net6.0\System.IO.Ports.dll
+C:\Users\user\source\repos\SerialPortDeneme\SerialPortDeneme\bin\Release\net6.0-windows\publish\runtimes\win\lib\net6.0\System.IO.Ports.dll
