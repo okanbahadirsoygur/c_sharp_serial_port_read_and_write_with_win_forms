@@ -112,7 +112,8 @@ namespace SerialPortDeneme
                 {
                     SerialPort sp = (SerialPort)sender;
 
-                    richTextBox1.Text += sp.ReadLine();
+                    richTextBox1.Text = sp.ReadLine();
+                    dosyaLogEkleAsync(sp.ReadLine() + " | "+ DateTime.Now);
                 }
 
             }
@@ -176,6 +177,13 @@ namespace SerialPortDeneme
             }
 
 
+        }
+
+        private String dosyaYolu = "C:\\Users\\user\\Desktop\\ttgolog.txt";
+        private async Task dosyaLogEkleAsync(String log)
+        {
+            using StreamWriter file = new(dosyaYolu, append: true);
+            await file.WriteLineAsync(log);
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
